@@ -47,7 +47,7 @@ export default function (app, routes) {
 
       // eslint-disable-next-line no-unused-vars, no-shadow
       app.use(errorHandler);
-      resolve();
+      return resolve();
     });
   });
 }
