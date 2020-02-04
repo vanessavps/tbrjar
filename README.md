@@ -98,7 +98,7 @@ npm run lint
 Fix all airbnb linter errors
 
 ```
-npm run lint
+npm run lint:fix
 ```
 
 ## Deploy It
