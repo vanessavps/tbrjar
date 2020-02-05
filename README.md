@@ -1,4 +1,4 @@
-# tbrjar
+# TBR Jar
 
 Draw the next book to be read
 
