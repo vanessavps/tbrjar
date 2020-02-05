@@ -28,6 +28,41 @@ definitions:
         example: no_stress
 
 paths:
+  #book
+  /book:
+    get:
+      tags:
+        - Book
+      description: Fetch all books
+      responses:
+        200:
+          description: Returns all books
+    post:
+      tags:
+        - Book
+      description: Create a new book
+      responses:
+        200:
+          description: The book was created
+
+  /book/{id}:
+    get:
+      tags:
+        - Book
+      description: Returns the book with the specified id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of the example to retrieve
+          type: integer
+      responses:
+        200:
+          description: Return the book with the specified id
+        404:
+          description: Book not found
+
+  #examples
   /examples:
     get:
       tags:
@@ -45,7 +80,7 @@ paths:
           in: body
           description: an example
           required: true
-          schema: 
+          schema:
             $ref: "#/definitions/ExampleBody"
       responses:
         200:

@@ -13,10 +13,11 @@
   },
   "rules": {
     "no-underscore-dangle": 0,
+    "linebreak-style": 0,
     "class-methods-use-this": ["off"],
-    "no-use-before-define": ["error", { 
-      "functions": false, 
-      "classes": false 
+    "no-use-before-define": ["error", {
+      "functions": false,
+      "classes": false
     }],
     "node/no-unpublished-import": ["off"],
     "arrow-parens": ["error", "as-needed", {
