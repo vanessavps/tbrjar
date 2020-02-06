@@ -27,6 +27,23 @@ definitions:
         type: string
         example: no_stress
 
+  BookBody:
+    type: object
+    title: book
+    required:
+      - title
+    properties:
+      title:
+        type: string
+        example: Carrie
+      author:
+        type: string
+        example: Stephen King
+      numberOfPages:
+        type: integer
+        example: 340
+
+
 paths:
   #book
   /book:
@@ -41,6 +58,13 @@ paths:
       tags:
         - Book
       description: Create a new book
+      parameters:
+        - name: book
+          in: body
+          description: a book
+          required: true
+          schema:
+            $ref: "#/definitions/BookBody"
       responses:
         200:
           description: The book was created
