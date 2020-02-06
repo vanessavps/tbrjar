@@ -1,4 +1,8 @@
 import logger from '../../../common/logger';
+import db from './book.db.service';
+import Book from './../../model/book.js';
+
+var book = require('./../../model/book').default;
 
 class BookService {
   getAll() {
@@ -11,8 +15,14 @@ class BookService {
     return Promise.resolve(`This is get by id. Id ${id}`);
   }
 
-  save(book) {
-    return Promise.resolve(`The book ${book} was saved`);
+  save(data) {
+    logger.info('Service!');
+    logger.info(`This is the data ${data.title}`);
+
+    let book = new Book(data.title,data.author, data.numberOfPages);
+    logger.info(`This is the book ${book}`);
+
+    return db.save(book);
   }
 
   update(id) {

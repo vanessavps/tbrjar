@@ -1,6 +1,19 @@
+import logger from '../../../common/logger';
 import BookService from '../../services/book/book.service';
 
 export class BookController {
+
+  create(req, res) {
+    logger.info(req.body);
+
+    BookService
+      .save(req.body)
+      .then(r => res
+        .status(201)
+        .location(`/tbrjar/book/${r.id}`)
+        .json(r));
+  }
+
   getAll(req, res) {
     BookService.getAll()
       .then(r => res.json(r));
@@ -45,14 +58,6 @@ export class BookController {
       });
   }
 
-  create(req, res) {
-    BookService
-      .save(req.body)
-      .then(r => res
-        .status(201)
-        .location(`/tbrjar/book/${r.id}`)
-        .json(r));
-  }
 }
 
 export default new BookController();
