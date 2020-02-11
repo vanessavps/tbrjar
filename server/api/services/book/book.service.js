@@ -7,7 +7,7 @@ var book = require('./../../model/book').default;
 class BookService {
   getAll() {
     logger.info('Getting all');
-    return Promise.resolve('These are all the books');
+    return db.getAll(book);
   }
 
   get(id) {
