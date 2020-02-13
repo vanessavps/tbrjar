@@ -5,10 +5,10 @@ info:
   description: Draw the next book to be read
 basePath: /tbrjar
 tags:
-  - name: Examples
-    description: Simple example endpoints
+  - name: Book
+    description: Book endpoints
   - name: Specification
-    description: The swagger API specification
+    description: The Swagger API specification
 
 consumes:
   - application/json
@@ -17,16 +17,6 @@ produces:
 
 
 definitions:
-  ExampleBody:
-    type: object
-    title: example
-    required:
-      - name
-    properties:
-      name:
-        type: string
-        example: no_stress
-
   BookBody:
     type: object
     title: book
@@ -45,7 +35,7 @@ definitions:
 
 
 paths:
-  #book
+  #BOOK
   /book:
     get:
       tags:
@@ -78,54 +68,44 @@ paths:
         - name: id
           in: path
           required: true
-          description: The id of the example to retrieve
+          description: The id of the book to retrieve
           type: integer
       responses:
         200:
           description: Return the book with the specified id
         404:
           description: Book not found
-
-  #examples
-  /examples:
-    get:
+    put:
       tags:
-        - Examples
-      description: Fetch all examples
-      responses:
-        200:
-          description: Returns all examples
-    post:
-      tags:
-        - Examples
-      description: Create a new example
+        - Book
+      description: Update book with the specified id
       parameters:
-        - name: example
-          in: body
-          description: an example
-          required: true
-          schema:
-            $ref: "#/definitions/ExampleBody"
+      - name: id
+        in: path
+        required: true
+        description: The id of the book to update
+        type: integer
       responses:
         200:
-          description: Returns all examples
-
-  /examples/{id}:
-    get:
-      tags:
-        - Examples
-      parameters:
-        - name: id
-          in: path
-          required: true
-          description: The id of the example to retrieve
-          type: integer
-      responses:
-        200:
-          description: Return the example with the specified id
+          description: Return the updated book
         404:
-          description: Example not found
-
+          description: Book not found
+    delete:
+      tags:
+        - Book
+      description: Delete book with the specified id
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: The id of the book to delete
+        type: integer
+      responses:
+        200:
+          description: The book was deleted
+        404:
+          description: Book not found
+          
   /spec:
     get:
       tags:
