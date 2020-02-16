@@ -69,7 +69,7 @@ paths:
           in: path
           required: true
           description: The id of the book to retrieve
-          type: integer
+          type: string
       responses:
         200:
           description: Return the book with the specified id
@@ -84,7 +84,7 @@ paths:
         in: path
         required: true
         description: The id of the book to update
-        type: integer
+        type: string
       responses:
         200:
           description: Return the updated book
@@ -99,7 +99,7 @@ paths:
         in: path
         required: true
         description: The id of the book to delete
-        type: integer
+        type: string
       responses:
         200:
           description: The book was deleted

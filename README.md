@@ -64,11 +64,6 @@ npm run test:debug
 
 ## Try It
 * Open you're browser to [http://localhost:3000](http://localhost:3000)
-* Invoke the `/examples` endpoint 
-  ```shell
-  curl http://localhost:3000/tbrjar/examples
-  ```
-
 
 ## Debug It
 
