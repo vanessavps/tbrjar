@@ -14,8 +14,8 @@ class BookService {
   }
 
   save(data) {
-    logger.debug(`Saving ${data.title}`); 
-    const book = new Book(data.title, data.author, data.numberOfPages);
+    logger.debug(`Saving ${data.title}`);
+    const book = new Book(undefined, data.title, data.author, data.numberOfPages);
 
     return db.save(book);
   }

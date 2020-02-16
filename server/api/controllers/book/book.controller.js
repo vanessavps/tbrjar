@@ -1,4 +1,3 @@
-import logger from '../../../common/logger';
 import BookService from '../../services/book/book.service';
 
 export class BookController {
