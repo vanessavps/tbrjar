@@ -3,16 +3,23 @@ import CsvReadableStream from 'csv-reader';
 import { createObjectCsvWriter } from 'csv-writer';
 import logger from '../../../common/logger';
 import Book from '../../model/book';
+var mkdirp = require('mkdirp');
+
+const bookFilePath = process.env.BOOKS_FILE_PATH || './';
+const bookFile = bookFilePath + 'books.csv';
+
+mkdirp(bookFilePath);
 
 const writer = createObjectCsvWriter({
-  path: 'books.csv',
+  path: bookFile,
   header: [
     { id: 'id', title: 'id' },
     { id: 'title', title: 'title' },
     { id: 'author', title: 'author' },
     { id: 'numberOfPages', title: 'pages' },
   ],
-  append: true,
+  // The header will not be written because append is true. Dumb library
+  append: true
 });
 
 
@@ -22,15 +29,15 @@ class BookDatabase {
       const records = [book];
       writer.writeRecords(records)
         .then(() => {
-          resolve(book);
+          resolve(book); 
         });
     });
   }
 
   getAll() {
-    const inputStream = fs.createReadStream('books.csv', 'utf8');
+    const inputStream = fs.createReadStream(bookFile, 'utf8');
     const readableStream = new CsvReadableStream({
-      parseNumbers: true, parseBooleans: true, trim: true, skipHeader: true,
+      parseNumbers: true, parseBooleans: true, trim: true
     });
     const books = [];
 
