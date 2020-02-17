@@ -1,11 +1,11 @@
-import chai from 'chai';
-import request from 'supertest';
+/* import chai from 'chai';
+ import request from 'supertest';
 import Server from '../server';
 
-const { expect } = chai;
+const { expect } = chai; */
 
 describe('Examples', () => {
-  it('should get all examples', () => request(Server)
+  /* it('should get all examples', () => request(Server)
     .get('/tbrjar/examples')
     .expect('Content-Type', /json/)
     .then(r => {
@@ -33,5 +33,5 @@ describe('Examples', () => {
         .to.be.an.an('object')
         .that.has.property('name')
         .equal('test');
-    }));
+    })); */
 });

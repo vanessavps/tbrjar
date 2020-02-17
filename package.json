@@ -10,11 +10,12 @@
     "dev:debug": "nodemon server --exec babel-node --config .nodemonrc.json --inspect | pino-pretty",
     "test": "mocha --require @babel/register --exit",
     "test:debug": "mocha --require @babel/register --inspect-brk --exit",
-    "lint": "eslint -c .eslintrc.json {server,test}/**",
-    "lint:fix": "eslint --fix -c .eslintrc.json {server,test}/**"
+    "lint": "eslint -c .eslintrc.json {server,test}/** --no-error-on-unmatched-pattern",
+    "lint:fix": "eslint --fix -c .eslintrc.json {server,test}/** --no-error-on-unmatched-pattern"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "chai-http": "^4.3.0",
     "cookie-parser": "^1.4.4",
     "csv-parser": "^2.3.2",
     "csv-reader": "^1.0.6",
@@ -36,8 +37,8 @@
     "babel-eslint": "^10.0.3",
     "chai": "^4.2.0",
     "eslint": "^6.6.0",
-    "eslint-plugin-import": "^2.18.2",
     "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "mocha": "^6.2.2",
     "nodemon": "^1.19.4",
     "pino-pretty": "^3.3.0",
