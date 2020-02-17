@@ -2,7 +2,7 @@ import chai from 'chai';
 
 import request from 'supertest';
 import Server from '../../../server';
-import carrieBook from '../../data/carrie-book.json'
+import carrieBook from '../../data/carrie-book.json';
 
 const { assert } = chai;
 
