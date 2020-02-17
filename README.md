@@ -96,13 +96,4 @@ Fix all airbnb linter errors
 npm run lint:fix
 ```
 
-## Deploy It
-
-Deploy to CloudFoundry
-
-```shell
-cf push tbrjar
-```
-
-
    
