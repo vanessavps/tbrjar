@@ -27,6 +27,13 @@ class BookService {
   delete(id) {
     return db.delete(id);
   }
+
+  drawBook() {
+    return db.getAll().then(books => {
+      const book = books[Math.floor(Math.random() * books.length)];
+      return Promise.resolve(book);
+    });
+  }
 }
 
 export default new BookService();

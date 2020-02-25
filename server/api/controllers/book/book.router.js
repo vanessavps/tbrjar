@@ -6,5 +6,6 @@ export default express
   .post('/', controller.create)
   .put('/:id', controller.update)
   .get('/', controller.getAll)
+  .get('/draw/', controller.drawBook)
   .get('/:id', controller.get)
   .delete('/:id', controller.delete);

@@ -6,7 +6,7 @@ import carrieBook from '../../data/carrie-book.json';
 
 const { assert } = chai;
 
-describe('/POST book', () => {
+describe('Book endpoint', () => {
   it('Should create a new book and return it', done => {
     request(Server)
       .post('/tbrjar/book')

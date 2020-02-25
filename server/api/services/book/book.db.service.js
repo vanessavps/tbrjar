@@ -56,9 +56,9 @@ class BookDatabase {
   }
 
   get(id) {
-    const inputStream = fs.createReadStream('books.csv', 'utf8');
+    const inputStream = fs.createReadStream(bookFile, 'utf8');
     const readableStream = new CsvReadableStream({
-      parseNumbers: true, parseBooleans: true, trim: true, skipHeader: true,
+      parseNumbers: true, parseBooleans: true, trim: true,
     });
 
     return new Promise(resolve => {

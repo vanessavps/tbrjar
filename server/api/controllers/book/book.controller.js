@@ -55,6 +55,12 @@ export class BookController {
         }
       });
   }
+
+  drawBook(req, res) {
+    BookService.drawBook().then(book => {
+      res.json(book);
+    });
+  }
 }
 
 export default new BookController();
