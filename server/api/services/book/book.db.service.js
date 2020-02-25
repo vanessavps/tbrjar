@@ -7,7 +7,7 @@ import Book from '../../model/book';
 const mkdirp = require('mkdirp');
 
 const bookFilePath = process.env.BOOKS_FILE_PATH || './';
-const bookFile = `${bookFilePath}books.csv`;
+const bookFile = `${bookFilePath}/books.csv`;
 
 mkdirp(bookFilePath);
 
