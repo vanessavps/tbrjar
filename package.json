@@ -24,7 +24,7 @@
     "express": "^4.17.1",
     "mkdirp": "^1.0.3",
     "pino": "^5.13.6",
-    "swagger-express-middleware": "^2.0.4",
+    "swagger-express-middleware": "^4.0.2",
     "uuid": "^3.4.0"
   },
   "devDependencies": {
@@ -37,11 +37,11 @@
     "@babel/register": "^7.7.0",
     "babel-eslint": "^10.0.3",
     "chai": "^4.2.0",
-    "eslint": "^6.6.0",
+    "eslint": "^8.11.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "mocha": "^6.2.2",
-    "nodemon": "^1.19.4",
+    "mocha": "^9.2.2",
+    "nodemon": "^2.0.15",
     "pino-pretty": "^3.3.0",
     "supertest": "^4.0.2"
   },
